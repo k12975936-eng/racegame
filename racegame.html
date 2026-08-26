@@ -4,28 +4,319 @@
 
 <head>
 
+<meta charset="UTF-8">
+
 <style>
 
-html, body {
-  margin: 0;
-  padding: 0;
-  background: transparent;
+button{
+background-color: black;
+font-size:20px;
+font-family: futura-condensedExtraBold;
+color:white;
+padding: 10px 30px;
+margin: 10px 5px;
+border-radius: 10px;
+border:white solid 2px;
+}
+
+input{
+font-size:20px;
+border-radius: 15px;
+font-family: futura-condensedExtraBold;
+}
+
+body{
+color:white;
+font-size:30px;
+font-family: futura-condensedExtraBold;
 }
 
 body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
+content: "";
+position: fixed;
+top: 0;
+left: 0;
+width: 100vw;
+height: 100vh;
+background-image: url("https://cdn.phototourl.com/member/2026-08-15-611dedda-4086-467f-a37a-8d44134fce91.jpg");
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+z-index: -1;
+}
 
-  width: 100%;
-  height: 100dvh;
+#createPlayer{
+display: none;
+text-align: center;
+border-radius: 20px;
+padding: 10px 30px;
+border: 2px solid white;
+width:300px;
+margin: auto;
+}
 
-  background-image: url("https://cdn.phototourl.com/free/2026-08-11-f2eb9894-8231-4bc6-9bc2-a9ee0fb52408.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+#loadingScreen{
+text-align: center;
+font-size: 45px;
+position: absolute;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
+border:white solid 2px;
+border-radius: 15px;
+padding:30px;
+}
 
-  z-index: -1;
+#customizeHair{
+display: none;
+}
+
+#customizeSkin{
+display: none;
+}
+
+#customizeShirt{
+display: none;
+}
+
+#customizeBoy{
+display: none
+}
+
+#customizeGirl{
+display: none
+}
+
+#name2{
+display: none;
+text-align: center;
+border-radius: 20px;
+padding: 10px 30px;
+border: 2px solid white;
+width:300px;
+margin: auto;
+position: absolute;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
+}
+
+#age2{
+display: none;
+text-align: center;
+border-radius: 20px;
+padding: 10px 30px;
+border: 2px solid white;
+width:300px;
+margin: auto;
+position: absolute;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
+}
+
+#gender2{
+display: none;
+text-align: center;
+border-radius: 20px;
+padding: 10px 30px;
+border: 2px solid white;
+width:300px;
+margin: auto;
+position: absolute;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
+}
+
+#hairLength{
+display: none;
+text-align: center;
+border-radius: 20px;
+padding: 10px 30px;
+border: 2px solid white;
+width:300px;
+margin: auto;
+position: absolute;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
+}
+
+#customizeSkin2{
+display: none;
+}
+
+#customizeHair2{
+display: none;
+}
+
+#customizeShirt2{
+display: none;
+}
+
+#yourPersonIsReady{
+display: none;
+text-align: center;
+font-size: 50px;
+border: 2px solid white;
+border-radius: 20px;
+position: absolute;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
+}
+
+#characterDone{
+display: none;
+}
+
+#character3 {
+position: relative;
+width: 700px;
+height: 800px;
+margin: auto;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 600px;
+top: -50px;
+}
+
+#character3 img{
+position: absolute;
+width: 100%;
+height: 100%;
+object-fit: contain;
+}
+
+#creditsPage {
+display:none;
+text-align:center;
+border-radius: 20px;
+padding: 10px 30px;
+border: 2px solid white;
+width:600px;
+margin: auto;
+position: absolute;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
+}
+
+#settingsPage{
+display: none;
+}
+
+#startText{
+font-size:30px;
+font-family: Galvji;
+margin-top: 0;
+white-space: nowrap;
+}
+
+#heading{
+margin-bottom:1px;
+}
+
+#hairNext,
+#skinNext,
+#shirtNext
+{
+position: relative;
+bottom:350px;
+left:700px;
+}
+
+#hair2Next,
+#skin2Next,
+#shirt2Next
+{
+position: relative;
+bottom:350px;
+left:746px;
+}
+
+#hairPrevious,
+#skinPrevious,
+#shirtPrevious
+{
+position: relative;
+bottom:350px;
+left:310px;
+}
+
+#hair2Previous,
+#skin2Previous,
+#shirt2Previous
+{
+position: relative;
+bottom:350px;
+left:290px;
+}
+
+#hairContinue,
+#skinContinue,
+#shirtContinue,
+#hair2Continue,
+#skin2Continue,
+#shirt2Continue
+{
+position: absolute;
+top:15px;
+left:370px;
+}
+
+#hairText,
+#skinText,
+#shirtText,
+#hairText2,
+#skinText2,
+#shirtText2
+{
+display:none;
+position: absolute;
+font-size:30px;
+left:30px;
+margin-top: 20px;
+}
+
+#characterSkin2,
+#characterShirt2,
+#characterHair2,
+#characterShirt,
+#characterSkin,
+#characterHair{
+display: block;
+margin-left: auto;
+margin-right: auto;
+}
+
+#showPerson{
+position: relative;
+bottom:40px;
+font-size:30px
+}
+
+#welcome1,
+#welcome2,
+#welcome3
+{
+display: none;
+text-align:center;
+border-radius: 20px;
+padding: 10px 30px;
+border: 2px solid white;
+width:600px;
+margin: auto;
+position: absolute;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
+}
+
+#continue6{
+margin: auto;
 }
 
 </style>
@@ -34,59 +325,602 @@ body::before {
 
 <body>
 
-<div id="background"></div>
+<div id="loadingScreen">
 
-<h1>Your F1 career</h1>
+<h1 id="heading">F1 SIMULATOR</h1>
+
+<p id="startText">Ready to see if you could be a Formula One World Champion?</p>
+
+<button id="newGame">NEW GAME</button>
+
+<button id="credits">CREDITS</button>
+
+<button id="settings">SETTINGS</button>
+
+</div>
+
+<div id="welcome1">
+
+<p>Welcome to the F1 Simulator! </p> 
+
+<p>Here you can find out how your life would be if you were a Formula One Driver.</p> 
+
+<button id="ContinueWelcome1">CONTINUE</button>
+
+</div>
+
+<div id="welcome2">
+
+<p>But first let me explain everything to you--.</p>
+
+<p>Ehm I don't know what name you want to have.</p>
+
+<button id="ContinueWelcome2">CONTINUE</button>
+
+</div>
+
+<div id="creditsPage">
+
+<h1><ins>CREDITS</ins></h1>
+
+<h3>F1 SIMULATOR</h3>
+
+<p>Game Design & Programming • Karolina</p>
+
+<p>Character Design • Cuvuly on Picrew</p>
+
+<p>Background Picture • Mark Thompson</p>
+
+<button id="backButton">BACK</button>
+ 
+</div>
+
+<div id="name2">
 
 <p>What is your name?</p>
 
-<input id="name">
+<form id="nameForm">
+    <input id="name" required>
+    <button id="continue3" type="submit">Continue</button>
+</form>
 
-<p id="welcome"></p>
+</div>
 
-<p>How old are you?</p>
+<div id ="welcome3">
 
-<input id="age">
+<p id="welcomeText5"></p>
 
-<p>What is your gender?</p>
+<button id="continue6">CONTINUE</button>
 
-<button id="male">Male</button>
+</div>
 
-<button id="female">Female</button>
+<div id="gender2">
 
-<button id="other">Other</button>
+<p>What are your pronouns?</p>
+
+<button id="He/Him">He/Him</button>
+
+<button id="She/Her">She/Her</button>
+
+<button id="They/Them">They/Them</button>
 
 <br>
 
-<button id="start">START CAREER</button>
+<button id="continue">Continue</button>
+
+</div>
+
+<p id="hairText">Choose your hair color!</p>
+
+<div id="customizeBoy">
+
+<div id="customizeHair">
+
+<img id="characterHair" src="https://cdn.phototourl.com/member/2026-08-14-5bafc4f8-29c0-44e6-bd95-403a4865ee92.png">
+
+<button id="hairPrevious"><</button>
+
+<button id="hairNext">></button>
+
+<button id="hairContinue">CONTINUE</button>
+
+</div>
+
+<div id="customizeSkin">
+
+<p id="skinText">Choose your skin color!</p>
+
+<img id="characterSkin" src="https://cdn.phototourl.com/member/2026-08-14-394500c5-5fc3-41a0-b470-8e930afd1c26.png">
+
+<button id="skinPrevious"><</button>
+
+<button id="skinNext">></button>
+
+<button id="skinContinue">CONTINUE</button>
+
+</div>
+
+<div id="customizeShirt">
+
+<p id="shirtText">Choose your shirt color!</p>
+
+<img id="characterShirt" src="https://cdn.phototourl.com/member/2026-08-14-921da4ac-4bf7-4732-b68b-5ccc9d3db6b7.png">
+
+<button id="shirtPrevious"><</button>
+
+<button id="shirtNext">></button>
+
+<button id="shirtContinue">CONTINUE</button>
+
+</div>
+
+</div>
+
+<div id="customizeGirl">
+
+<div id="customizeHair2">
+
+<p id="hairText2">Choose your hair color!</p>
+
+<img id="characterHair2" src="https://cdn.phototourl.com/free/2026-08-14-6d55aadc-318c-4911-a73e-9e7080e44cee.png">
+
+<button id="hair2Previous"><</button>
+
+<button id="hair2Next">></button>
+
+<button id="hair2Continue">CONTINUE</button>
+
+</div>
+
+<div id="customizeSkin2">
+
+<p id="skinText2">Choose your skin color!</p>
+
+<img id="characterSkin2" src="https://cdn.phototourl.com/free/2026-08-14-6750d981-cbb6-4340-b91f-3f5e5fde6397.png">
+
+<button id="skin2Previous"><</button>
+
+<button id="skin2Next">></button>
+
+<button id="skin2Continue">CONTINUE</button>
+
+</div>
+
+<div id="customizeShirt2">
+
+<p id="shirtText2">Choose your shirt color!</p>
+
+<img id="characterShirt2" src="https://cdn.phototourl.com/member/2026-08-14-033f0697-cc33-40a7-b17f-3b3555d30bab.png">
+
+<button id="shirt2Previous"><</button>
+
+<button id="shirt2Next">></button>
+
+<button id="shirt2Continue">CONTINUE</button>
+
+</div>
+
+</div>
+
+<div id="hairLength">
+
+<p>What hair length do you want?</p>
+
+<button id="shortHair">Short</button>
+
+<button id="longHair">Long</button>
+
+</div>
+
+<div id="yourPersonIsReady">
+
+<p>YOUR CHARACTER IS READY!</p>
+
+<button id="showPerson">Show me</button>
+
+</div>
+
+<div id="characterDone">
+
+<p id="welcome"></p>
+
+<div id="character3">
+<img id="doneSkin" src="">
+<img id="doneShirt" src="">
+<img id="doneHair" src="">
+</div>
+
+</div>
+
+<div id="settingsPage">
+
+<p>settings placeholder</p>
+
+<button id="backButton2">BACK</button>
+
+</div>
 
 </body>
 
 <script>
 
-document.getElementById("start").addEventListener("click", startCareer)
+document.getElementById("showPerson").addEventListener("click", function(){
+document.getElementById("welcome").innerHTML="Welcome, " + 
+document.getElementById("name").value + "! You are 6 years old and your pronouns are " +
+pronouns + "."
+})
 
-function startCareer() {
-document.getElementById("welcome").innerHTML=
-"Welcome " + document.getElementById("name").value + ", you are " + document.getElementById("age").value + " years old and your gender is " + gender + "!"
+document.getElementById("continue3").addEventListener("click", function(){
+document.getElementById("welcomeText5").innerHTML= 
+document.getElementById("name").value + "? That's a pretty name!"
+})
+
+let pronouns=""
+
+let hairLength=""
+
+document.getElementById("shortHair").addEventListener("click", function(){
+hairLength="short"
+document.getElementById("customizeBoy").style.display="block";
+document.getElementById("customizeGirl").style.display="none";
+document.getElementById("customizeHair").style.display="block";
+document.getElementById("hairLength").style.display="none";
+document.getElementById("hairText").style.display="block";
+})
+
+document.getElementById("longHair").addEventListener("click", function(){
+hairLength="long"
+document.getElementById("customizeBoy").style.display="none";
+document.getElementById("customizeGirl").style.display="block";
+document.getElementById("customizeHair2").style.display="block";
+document.getElementById("hairLength").style.display="none";
+document.getElementById("hairText2").style.display="block";
+})
+
+let hair=["brown", "blonde", "black", "red", "grey"]
+let hairIndex=0
+
+let hairImages=[
+"https://cdn.phototourl.com/member/2026-08-14-5bafc4f8-29c0-44e6-bd95-403a4865ee92.png",
+"https://cdn.phototourl.com/free/2026-08-14-8761b994-9076-4661-a0fc-f9e878c3168b.png",
+"https://cdn.phototourl.com/free/2026-08-14-20bc6189-3e6b-48ec-b160-90436e420bb8.png",
+"https://cdn.phototourl.com/free/2026-08-14-37d0aaf4-6bfc-4612-b7c3-83e47110cd86.png",
+"https://cdn.phototourl.com/free/2026-08-14-454023f2-6172-4939-97d0-18349dcf1593.png"
+]
+
+let hair2=["brown", "blonde", "black", "red", "grey"]
+let hair2Index=0
+
+let hair2Images=[
+"https://cdn.phototourl.com/free/2026-08-14-6d55aadc-318c-4911-a73e-9e7080e44cee.png",
+"https://cdn.phototourl.com/free/2026-08-14-463b8513-568e-4700-ae80-7c72b39c570a.png",
+"https://cdn.phototourl.com/free/2026-08-14-e0fd792c-f0ae-46fa-9c8e-09ebb7df91ea.png",
+"https://cdn.phototourl.com/free/2026-08-14-b435762d-e901-4ce6-89eb-e48872c4e2b8.png",
+"https://cdn.phototourl.com/free/2026-08-14-a71e2a30-5276-4b2a-9608-34fa088add83.png"
+]
+
+let skin = ["light", "olive", "lightDark", "dark"]
+let skinIndex = 0
+
+let skinImages = [
+"https://cdn.phototourl.com/member/2026-08-14-394500c5-5fc3-41a0-b470-8e930afd1c26.png",
+"https://cdn.phototourl.com/member/2026-08-14-9463fef8-a4c9-40f2-b472-a7ea33330bd2.png",
+"https://cdn.phototourl.com/member/2026-08-14-049b4963-19cf-48d0-97a9-e4fd79940b6e.png",
+"https://cdn.phototourl.com/member/2026-08-14-c06d8f12-0469-467f-8901-6e0a11591151.png"
+]
+
+let skin2 = ["light", "olive", "lightDark", "dark"]
+let skin2Index = 0
+
+let skin2Images = [
+"https://cdn.phototourl.com/free/2026-08-14-6750d981-cbb6-4340-b91f-3f5e5fde6397.png",
+"https://cdn.phototourl.com/member/2026-08-14-bb3d6131-9728-48dc-b39b-3f5ce0290998.png",
+"https://cdn.phototourl.com/member/2026-08-14-ec312ddc-1c9e-4df6-a168-40c7ca2369c8.png",
+"https://cdn.phototourl.com/member/2026-08-14-b91164f9-bf0a-4b85-8b19-3ee28a556d1d.png"
+]
+
+let shirt = ["pink", "red", "purple", "blue", "green"]
+let shirtIndex = 0
+
+let shirtImages = [
+"https://cdn.phototourl.com/member/2026-08-14-921da4ac-4bf7-4732-b68b-5ccc9d3db6b7.png",
+"https://cdn.phototourl.com/member/2026-08-14-02687c54-dfb7-4255-b82e-f5ca807b6e23.png",
+"https://cdn.phototourl.com/member/2026-08-14-ac54bde0-fdc3-453c-ae1f-c6fadb79f7d9.png",
+"https://cdn.phototourl.com/member/2026-08-14-c4f8ff91-5229-4981-bbae-63e5a627b1a4.png",
+"https://cdn.phototourl.com/member/2026-08-14-606881cb-8253-440b-9261-43902395b691.png"
+]
+
+let shirt2 = ["pink", "red", "purple", "blue", "green"]
+let shirt2Index = 0
+
+let shirt2Images = [
+"https://cdn.phototourl.com/member/2026-08-14-033f0697-cc33-40a7-b17f-3b3555d30bab.png",
+"https://cdn.phototourl.com/member/2026-08-14-f4ca5d6d-2c33-4f31-9a77-727f85d359ed.png",
+"https://cdn.phototourl.com/member/2026-08-14-91ebe722-f11e-4c5d-b35d-b26620ccc382.png",
+"https://cdn.phototourl.com/member/2026-08-14-0f12b7f3-6303-4f2a-9160-de8b18595dd3.png",
+"https://cdn.phototourl.com/member/2026-08-14-de5ffeb6-3723-4b88-911e-b442c678222e.png"
+]
+
+let skinDoneImages = [
+"https://cdn.phototourl.com/member/2026-08-14-ab7dfe39-4d8f-44ea-9151-a8df6666d47c.png",
+"https://cdn.phototourl.com/member/2026-08-14-ce9059dc-265a-4d9d-8e23-9ec02abd4cd3.png",
+"https://cdn.phototourl.com/member/2026-08-14-0e37535e-88eb-4372-97a1-ae789c7cb5c6.png",
+"https://cdn.phototourl.com/member/2026-08-14-20262534-efd2-4de1-938d-61775bd013e6.png"
+]
+
+let shirtDoneImages = [
+"https://cdn.phototourl.com/member/2026-08-14-4c274596-8d22-49c2-90ba-276465de93ff.png",
+"https://cdn.phototourl.com/member/2026-08-14-ca28e62f-3e0c-4841-8026-fd0436e8d952.png",
+"https://cdn.phototourl.com/member/2026-08-14-d72038a9-7d5b-4cc6-ad14-d42817eaf427.png",
+"https://cdn.phototourl.com/member/2026-08-14-81f76af0-c7b4-4fd7-9dac-90eec0f54911.png",
+"https://cdn.phototourl.com/member/2026-08-14-2bdbbc1c-30b6-43de-9dec-a6a02b0c8d59.png"
+]
+
+let hairDoneImages = [
+"https://cdn.phototourl.com/member/2026-08-14-1347ce68-a7ee-4c28-80c4-9de7dda5c45e.png",
+"https://cdn.phototourl.com/member/2026-08-14-d969dffb-81b6-47cb-821f-d405ae678d7f.png",
+"https://cdn.phototourl.com/member/2026-08-14-342178ec-5e40-4e5b-bdf6-44531653f7b6.png",
+"https://cdn.phototourl.com/member/2026-08-14-d7b26f3b-64a1-4ed9-8eca-3d32cc8716ea.png",
+"https://cdn.phototourl.com/member/2026-08-14-222a9253-d2f9-48ae-80a3-dda73acdb87d.png"
+]
+
+let hair2DoneImages = [
+"https://cdn.phototourl.com/member/2026-08-14-7d248d2e-73a3-4760-a51f-3244c3fde9f5.png",
+"https://cdn.phototourl.com/member/2026-08-15-975c568c-fa96-4424-849e-b7fc33ad93af.png",
+"https://cdn.phototourl.com/member/2026-08-14-3f823723-21b3-468b-95e5-3d4321e19d72.png",
+"https://cdn.phototourl.com/member/2026-08-14-1b86d047-45b9-4745-9b2c-84ba567288da.png",
+"https://cdn.phototourl.com/member/2026-08-14-a29235fc-7a98-4b0e-af76-828366a936c9.png"
+]
+
+document.getElementById("He/Him").addEventListener("click", function(){
+pronouns="He/Him"
+})
+
+document.getElementById("She/Her").addEventListener("click", function(){
+pronouns="She/Her"
+})
+
+document.getElementById("They/Them").addEventListener("click", function(){
+pronouns="They/Them"
+})
+
+document.getElementById("newGame").addEventListener("click", function(){
+document.getElementById("welcome1").style.display="block";
+document.getElementById("loadingScreen").style.display="none";
+})
+
+document.getElementById("ContinueWelcome1").addEventListener("click", function(){
+document.getElementById("welcome2").style.display="block";
+document.getElementById("welcome1").style.display="none";
+})
+
+document.getElementById("ContinueWelcome2").addEventListener("click", function(){
+document.getElementById("name2").style.display="block";
+document.getElementById("welcome2").style.display="none";
+})
+
+document.getElementById("nameForm").addEventListener("submit", function(){
+event.preventDefault();
+document.getElementById("welcomeText5").style.display="block";
+document.getElementById("welcome3").style.display="block";
+document.getElementById("name2").style.display="none";
+})
+
+document.getElementById("He/Him").addEventListener("click", function(){
+document.getElementById("He/Him").style.backgroundColor = "#AE3800";
+document.getElementById("She/Her").style.backgroundColor = "black";
+document.getElementById("They/Them").style.backgroundColor = "black";
+})
+
+document.getElementById("She/Her").addEventListener("click", function(){
+document.getElementById("She/Her").style.backgroundColor = "#AE3800";
+document.getElementById("He/Him").style.backgroundColor = "black";
+document.getElementById("They/Them").style.backgroundColor = "black";
+})
+
+document.getElementById("They/Them").addEventListener("click", function(){
+document.getElementById("They/Them").style.backgroundColor = "#AE3800";
+document.getElementById("He/Him").style.backgroundColor = "black";
+document.getElementById("She/Her").style.backgroundColor = "black";
+})
+
+document.getElementById("continue").addEventListener("click", function(){
+if (pronouns == "") {
+    alert("Please choose your pronouns!")
+    return;
 }
+document.getElementById("hairLength").style.display="block";
+document.getElementById("gender2").style.display="none";
+})
 
-let gender=""
-
-document.getElementById("male").addEventListener("click", function(){
-gender="male"
+document.getElementById("hairNext").addEventListener("click", function(){
+if (hairIndex==4){
+    hairIndex = 0
+}else {
+    hairIndex = hairIndex + 1;
 }
-)
+document.getElementById("characterHair").src=hairImages[hairIndex]
+})
 
-document.getElementById("female").addEventListener("click", function(){
-gender="female"
+document.getElementById("hairPrevious").addEventListener("click", function(){
+if (hairIndex==0){
+    hairIndex = 4
+}else {
+    hairIndex = hairIndex - 1;
 }
-)
+document.getElementById("characterHair").src=hairImages[hairIndex]
+})
 
-document.getElementById("other").addEventListener("click", function(){
-gender="other"
+document.getElementById("hairContinue").addEventListener("click", function(){
+document.getElementById("customizeSkin").style.display="block";
+document.getElementById("customizeHair").style.display="none";
+document.getElementById("skinText").style.display="block";
+document.getElementById("hairText").style.display="none";
+})
+
+document.getElementById("hair2Next").addEventListener("click", function(){
+if (hair2Index==4){
+    hair2Index = 0
+}else {
+    hair2Index = hair2Index + 1;
 }
-)
+document.getElementById("characterHair2").src=hair2Images[hair2Index]
+})
+
+document.getElementById("hair2Previous").addEventListener("click", function(){
+if (hair2Index==0){
+    hair2Index = 4
+}else {
+    hair2Index = hair2Index - 1;
+}
+document.getElementById("characterHair2").src=hair2Images[hair2Index]
+})
+
+document.getElementById("hair2Continue").addEventListener("click", function(){
+document.getElementById("customizeSkin2").style.display="block";
+document.getElementById("customizeHair2").style.display="none";
+document.getElementById("skinText2").style.display="block";
+document.getElementById("hairText2").style.display="none";
+})
+
+document.getElementById("skinNext").addEventListener("click", function(){
+if (skinIndex==3){
+    skinIndex=0
+}else {skinIndex = skinIndex + 1
+}
+document.getElementById("characterSkin").src = skinImages[skinIndex]
+})
+
+document.getElementById("skinPrevious").addEventListener("click", function(){
+if (skinIndex==0){
+    skinIndex=3
+}else {skinIndex = skinIndex - 1
+}
+document.getElementById("characterSkin").src = skinImages[skinIndex]
+})
+
+document.getElementById("skinContinue").addEventListener("click", function(){
+document.getElementById("customizeShirt").style.display="block";
+document.getElementById("customizeSkin").style.display="none";
+document.getElementById("shirtText").style.display="block";
+})
+
+document.getElementById("skin2Next").addEventListener("click", function(){
+if (skin2Index==3){
+    skin2Index=0
+}else {skin2Index = skin2Index + 1
+}
+document.getElementById("characterSkin2").src = skin2Images[skin2Index]
+})
+
+document.getElementById("skin2Previous").addEventListener("click", function(){
+if (skin2Index==0){
+    skin2Index=3
+}else {skin2Index = skin2Index - 1
+}
+document.getElementById("characterSkin2").src = skin2Images[skin2Index]
+})
+
+document.getElementById("skin2Continue").addEventListener("click", function(){
+document.getElementById("customizeShirt2").style.display="block";
+document.getElementById("customizeSkin2").style.display="none";
+document.getElementById("shirtText2").style.display="block";
+})
+
+document.getElementById("shirtNext").addEventListener("click", function(){
+if (shirtIndex == 4){
+    shirtIndex = 0
+}else{shirtIndex = shirtIndex + 1
+}
+document.getElementById("characterShirt").src = shirtImages[shirtIndex]
+})
+
+document.getElementById("shirtPrevious").addEventListener("click", function(){
+if (shirtIndex == 0){
+    shirtIndex = 4
+}else{shirtIndex = shirtIndex - 1
+}
+document.getElementById("characterShirt").src = shirtImages[shirtIndex]
+})
+
+document.getElementById("shirtContinue").addEventListener("click", function(){
+document.getElementById("yourPersonIsReady").style.display="block";
+document.getElementById("customizeShirt").style.display="none"
+})
+
+document.getElementById("shirt2Next").addEventListener("click", function(){
+if (shirt2Index == 4){
+    shirt2Index = 0
+}else{shirt2Index = shirt2Index + 1
+}
+document.getElementById("characterShirt2").src = shirt2Images[shirt2Index]
+})
+
+document.getElementById("shirt2Previous").addEventListener("click", function(){
+if (shirt2Index == 0){
+    shirt2Index = 4
+}else{shirt2Index = shirt2Index - 1
+}
+document.getElementById("characterShirt2").src = shirt2Images[shirt2Index]
+})
+
+document.getElementById("shirt2Continue").addEventListener("click", function(){
+document.getElementById("yourPersonIsReady").style.display="block";
+document.getElementById("customizeShirt2").style.display="none"
+})
+
+document.getElementById("showPerson").addEventListener("click", function(){
+if (hairLength=="short"){
+console.log(skinIndex);
+document.getElementById("doneSkin").src = skinDoneImages[skinIndex];
+}else{document.getElementById("doneSkin").src = skinDoneImages[skin2Index];
+}
+document.getElementById("characterDone").style.display="block";
+document.getElementById("yourPersonIsReady").style.display="none";
+})
+
+document.getElementById("showPerson").addEventListener("click", function(){
+if (hairLength=="short"){
+document.getElementById("doneShirt").src = shirtDoneImages[shirtIndex];
+}else{document.getElementById("doneShirt").src = shirtDoneImages[shirt2Index];
+}
+})
+
+document.getElementById("showPerson").addEventListener("click", function(){
+if (hairLength=="short"){
+document.getElementById("doneHair").src = hairDoneImages[hairIndex];
+}else{document.getElementById("doneHair").src = hair2DoneImages[hair2Index];
+}
+})
+
+document.getElementById("credits").addEventListener("click", function(){
+document.getElementById("creditsPage").style.display="block";
+document.getElementById("loadingScreen").style.display="none"
+})
+
+document.getElementById("backButton").addEventListener("click", function(){
+document.getElementById("loadingScreen").style.display="block";
+document.getElementById("creditsPage").style.display="none"
+})
+
+document.getElementById("settings").addEventListener("click", function(){
+document.getElementById("settingsPage").style.display="block";
+document.getElementById("loadingScreen").style.display="none"
+})
+
+document.getElementById("backButton2").addEventListener("click", function(){
+document.getElementById("loadingScreen").style.display="block";
+document.getElementById("settingsPage").style.display="none"
+})
+
+document.getElementById("continue6").addEventListener("click", function(){
+document.getElementById("gender2").style.display="block";
+document.getElementById("welcome3").style.display="none"
+})
+
+document.getElementById("continue3").addEventListener("click", function(){
+document.getElementById("continue6").style.display="block";
+})
 
 </script>
 
